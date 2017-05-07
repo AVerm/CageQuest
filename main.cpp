@@ -17,8 +17,15 @@ bool gamewon;
 char ask(string question){
 	string answer;
 	cout << question << " ";
-	cin >> answer;
+	getline(cin, answer);
 	return toupper(answer[0]);
+}
+
+string ask(string question, bool shortanswer){
+	string answer;
+	cout << question << " ";
+	getline(cin, answer);
+	return answer;
 }
 
 void splashscreen(){
@@ -105,13 +112,10 @@ int morning(){
     cout << "Now you remember! You love your job as the top " << job << " in all of New York City." << endl;
     cout << "You receive $10,000 US for every " << product << " that you make." << endl;
     cout << "Anyway, it's time to get to work. You step out of bed, fully dressed." << endl;
-    cout << "What are you wearing? [free response one word] ";
-    cin >> outfit;
+    outfit = ask("What are you wearing? [free response]",1);
     cout << "But this isn't just any " << outfit << ", this one is special." << endl;
-    cout << "What adjective would describe this " << outfit << "? ";
-    cin >> outfitadjective;
-    cout << "Last but not least, what is your name? [free response one word] ";
-    cin >> name;
+    outfitadjective = ask("What adjective would describe this outfit?",1);
+    name = ask("Last but not least, what is your name? [free response one word]",1);
     cout << "To recap: You are " << name << ", NYC's most prestigious " << job << " and today you are wearing a(n) " << outfitadjective << " " << outfit <<endl;
     char exitmorningchoice;
     exitmorningchoice = ask("Is that all correct? [y/n]");
@@ -119,6 +123,7 @@ int morning(){
 		return 0;
     }
     else {
+		cout << "Here we go again..." << endl;
 		return morning();
     }
 }
@@ -168,7 +173,7 @@ int meetingtheman(){
 	cout << MARGIN << "\"Excuse me, Mr. Nicolas Cage, may I have your autograph?\" you find yourself asking." << endl;
 	cout << MARGIN << "\"Ah, " << name << "! Sit down, sit down. Oh, you seem surprised. Yes, I am the one who invited you here,\" he responds." << endl;
 	cout << "You feel your heart race. Nicolas Cage, your favorite actor of all time has invited you on a date. You can't believe it." << endl;
-	cout << "Nicolas turns to you. \"I ordered you a big " << drinksize << " of " << drink << ", your favorite,\" he offers. I hope you like it.\"" << endl;
+	cout << "Nicolas turns to you. \"I ordered you two " << drinksize << "s of " << drink << ", your favorite,\" he offers. I hope you like it.\"" << endl;
 	cout << "Eagerly, you take a sip. \"Mmmmm,\" you say. \"It's delicious!\"" << endl;
 	cout << "\"Thank you, I ordered it myself,\" he says, erupting into laughter at his own joke. \"Ooh, that's a good one!\" he finishes." << endl;
 }
