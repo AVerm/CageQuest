@@ -114,8 +114,8 @@ int morning(){
     cout << "Anyway, it's time to get to work. You step out of bed, fully dressed." << endl;
     outfit = ask("What are you wearing? [free response]",1);
     cout << "But this isn't just any " << outfit << ", this one is special." << endl;
-    outfitadjective = ask("What adjective would describe this outfit?",1);
-    name = ask("Last but not least, what is your name? [free response one word]",1);
+    outfitadjective = ask("What adjective would describe this outfit? [free response]",1);
+    name = ask("Last but not least, what is your name? [free response]",1);
     cout << "To recap: You are " << name << ", NYC's most prestigious " << job << " and today you are wearing a(n) " << outfitadjective << " " << outfit <<endl;
     char exitmorningchoice;
     exitmorningchoice = ask("Is that all correct? [y/n]");
